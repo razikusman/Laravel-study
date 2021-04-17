@@ -23,12 +23,12 @@ Route::get('/pizza', function () {
     // return view('pizza' , ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000]);
 
     //above ddata in another way
-    $pizza = [
-        'name'=>'veg pizze',
-        'base'=>'classic',
-        'price' => 3000
+    $pizzas = [
+        ['name'=>'veg pizze','type'=>'vege','price' => 1000],
+        ['name'=>'chese pizze','type'=>'chese','price' => 2000],
+        ['name'=>'meat pizze','type'=>'meat','price' => 3000]
     ];
-    return view('pizza', $pizza);
+    return view('pizza' , ['pizzas'=> $pizzas]);
     
     // return 'pizza';
     // return ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000];

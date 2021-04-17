@@ -27,29 +27,14 @@
 
             <h2>Pizza list</h2>
 
-            <p> Pizza name - {{$name}} | Pizza Type - {{$base}} | Pizza price - {{$price}}/=</p>
-
-            <!-- blade if -->
-            @if($price < 2000)
-                <p> This pizza is cheaper</p>
-            @elseif($price < 3000)
-                <p> This pizza is cheap</p>
-            @else
-                <p> This pizza is expensive</p>
-            @endif
+            
+            @for($i = 0 ; $i < count($pizzas) ; $i++)
+            <p> Name :- {{ $pizzas[$i]['name'] }} | Type :- {{ $pizzas[$i]['type'] }} | Price :- {{ $pizzas[$i]['price'] }} </p>
+            @endfor
 
 
-            <!-- blade unless -->
+            
 
-            @unless($name == 'veg pizze')
-                <p> This pizza is non-vegi</p>
-            @endunless
-
-            <!-- php -->
-            @php
-                $name = 'Usman';
-                echo($name);
-            @endphp
         </div>
 
     </body>
