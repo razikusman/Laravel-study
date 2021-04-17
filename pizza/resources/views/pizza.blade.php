@@ -44,6 +44,12 @@
             @unless($name == 'veg pizze')
                 <p> This pizza is non-vegi</p>
             @endunless
+
+            <!-- php -->
+            @php
+                $name = 'Usman';
+                echo($name);
+            @endphp
         </div>
 
     </body>
