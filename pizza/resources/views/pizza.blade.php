@@ -28,7 +28,14 @@
             <h2>Pizza list</h2>
 
             <p> Pizza name - {{$name}} | Pizza Type - {{$base}} | Pizza price - {{$price}}/=</p>
-
+            @if($price < 2000)
+            <p> This pizza is cheaper</p>
+            @elseif($price < 3000)
+            <p> This pizza is cheap</p>
+            @else
+            <p> This pizza is expensive</p>
+            
+            @endif
 
 
         </div>
