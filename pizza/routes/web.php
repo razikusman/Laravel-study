@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/pizza', function () {
-    return view('pizza');
+    // return view('pizza');
+    // return 'pizza';
+    return ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000];
 });
