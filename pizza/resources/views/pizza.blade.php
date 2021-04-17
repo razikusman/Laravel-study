@@ -22,5 +22,16 @@
     </head>
     <body class="antialiased">
         <h1>Welcome ! to pizza house</h1>
+
+        <div>
+
+            <h2>Pizza list</h2>
+
+            <p> Pizza name - {{$name}} | Pizza Type - {{$base}} | Pizza price - {{$price}}/=</p>
+
+
+
+        </div>
+
     </body>
 </html>

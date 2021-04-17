@@ -18,7 +18,18 @@ Route::get('/', function () {
 });
 
 Route::get('/pizza', function () {
-    // return view('pizza');
+
+    //assume data come from db
+    // return view('pizza' , ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000]);
+
+    //above ddata in another way
+    $pizza = [
+        'name'=>'veg pizze',
+        'base'=>'classic',
+        'price' => 3000
+    ];
+    return view('pizza', $pizza);
+    
     // return 'pizza';
-    return ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000];
+    // return ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000];
 });
