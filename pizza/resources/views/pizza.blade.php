@@ -28,11 +28,15 @@
             <h2>Pizza list</h2>
 
             
-            @for($i = 0 ; $i < count($pizzas) ; $i++)
+            <!-- @for($i = 0 ; $i < count($pizzas) ; $i++)
             <p> Name :- {{ $pizzas[$i]['name'] }} | Type :- {{ $pizzas[$i]['type'] }} | Price :- {{ $pizzas[$i]['price'] }} </p>
-            @endfor
+            @endfor -->
 
-
+            @foreach($pizzas as $pizza)
+            <div>
+                Name :- {{$pizza['name']}} | Type :- {{ $pizza['type'] }} | Price :- {{ $pizza['price'] }}
+            </div>
+            @endforeach
             
 
         </div>
