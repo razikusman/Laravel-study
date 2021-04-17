@@ -34,10 +34,12 @@
 
             @foreach($pizzas as $pizza)
             <div>
-                Name :- {{$pizza['name']}} | Type :- {{ $pizza['type'] }} | Price :- {{ $pizza['price'] }}
+                {{$loop-> index +1}} Name :- {{$pizza['name']}} | Type :- {{ $pizza['type'] }} | Price :- {{ $pizza['price'] }}
+                @if($loop -> last)
+                    <p>-last in the loop</p>
+                @endif
             </div>
             @endforeach
-            
 
         </div>
 
