@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PizzaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,29 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizza', function () {
-
-    //assume data come from db
-    // return view('pizza' , ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000]);
-
-    //above ddata in another way
-    $pizzas = [
-        ['name'=>'veg pizze','type'=>'vege','price' => 1000],
-        ['name'=>'chese pizze','type'=>'chese','price' => 2000],
-        ['name'=>'meat pizze','type'=>'meat','price' => 3000]
-    ];
-
-    return view('pizza' , [
-        'pizzas'=> $pizzas,
-        'name' => request('name')
-        ]);
-    
-    // return 'pizza';
-    // return ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000];
-});
-
-
-Route::get('/pizza/{id}', function ($id) {
-// use $id get specific pizza with that i requested
-    return view('details' , ['id' => $id]);
-});
+Route::get('/pizza', 'PizzaController@index');
+Route::get('/pizza/{id}', 'PizzaController@show');
