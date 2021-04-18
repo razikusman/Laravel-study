@@ -18,7 +18,11 @@ class PizzaController extends Controller
         // wehre method find
         // $pizzas = pizza::where('type' , 'veg')->get();
 
-        
+        //find the last add
+        $pizzas = pizza::latest()->get();
+
+
+
 
 
         return view('pizza' , [
