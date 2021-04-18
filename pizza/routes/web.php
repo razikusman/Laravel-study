@@ -37,3 +37,9 @@ Route::get('/pizza', function () {
     // return 'pizza';
     // return ['name'=>'veg pizze' ,'base'=>'classic' , 'price' => 3000];
 });
+
+
+Route::get('/pizza/{id}', function ($id) {
+// use $id get specific pizza with that i requested
+    return view('details' , ['id' => $id]);
+});
