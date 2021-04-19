@@ -29,7 +29,7 @@ class PizzaController extends Controller
 
     // show with id
     public function show($id){
-        $pizza = pizza::find($id);
+        $pizza = pizza::findorfail($id);
         return view('Pizza.show' , ['pizza' => $pizza]);
     }
 
