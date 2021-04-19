@@ -8,9 +8,11 @@ use App\Models\Pizza;
 class PizzaController extends Controller
 {
 
-    public function __construct(){
-        $this -> middleware('auth');
-    }
+    // protect al functions in this
+    // public function __construct(){
+    //     $this -> middleware('auth');
+    // }
+
     // show all
     public function index(){
 
