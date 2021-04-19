@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizza', [PizzaController::class, 'index']) -> middleware('auth');
-Route::get('/pizza/create', [PizzaController::class, 'create']);
-Route::get('/pizza/{id}', [PizzaController::class, 'show']) -> middleware('auth');
-Route::post('/pizza', [PizzaController::class, 'store']);
-Route::delete('/pizza/{id}', [PizzaController::class, 'destroy']) -> middleware('auth');
+Route::get('/pizza', [PizzaController::class, 'index']) ->name('pizza.index') -> middleware('auth');
+Route::get('/pizza/create', [PizzaController::class, 'create']) ->name('pizza.create');
+Route::get('/pizza/{id}', [PizzaController::class, 'show']) ->name('pizza.show') -> middleware('auth');
+Route::post('/pizza', [PizzaController::class, 'store']) ->name('pizza.store');
+Route::delete('/pizza/{id}', [PizzaController::class, 'destroy']) ->name('pizza.destroy') -> middleware('auth');
 
 Auth::routes([
     'register' => false

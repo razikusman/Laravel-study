@@ -16,7 +16,7 @@
        </ul>
     </div>
 
-    <form action="/pizza/{{ $pizza->id }}" method="POST">
+    <form action="{{route('pizza.destroy' , $pizza->id )}}" method="POST">
         @csrf 
         @method('DELETE')
         <button>Done</button>
@@ -24,7 +24,7 @@
 
     <h1>**************Pizza list end**************</h1>
 
-    <a href="/pizza"> <- Go Back to all pizza </a>
+    <a href="{{route('pizza.store')}}"> <- Go Back to all pizza </a>
 
 </div>
 @endsection
