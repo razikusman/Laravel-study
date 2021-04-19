@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/pizza', [PizzaController::class, 'index']);
 Route::get('/pizza/create', [PizzaController::class, 'create']);
 Route::get('/pizza/{id}', [PizzaController::class, 'show']);
+Route::post('/pizza', [PizzaController::class, 'store']);

@@ -33,9 +33,19 @@ class PizzaController extends Controller
         return view('Pizza.show' , ['pizza' => $pizza]);
     }
 
-    // create
+    // create form
     public function create(){
         return view('Pizza.create');
+    }
+
+    // post
+    public function store(){
+
+        error_log(request('name'));
+        error_log(request('type'));
+        error_log(request('price'));
+
+        return redirect('/');
     }
 
 }
