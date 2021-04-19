@@ -22,6 +22,16 @@
             <input name ="price"  type="text">
         </div>
 
+        <div>
+            <fieldset>
+                <label for="toppings"> Extra Toppings </label>
+                <input type="checkbox" name="toppings[]" value="mashrooms">Mashrooms <br>
+                <input type="checkbox" name="toppings[]" value="garlic">Garlic <br>
+                <input type="checkbox" name="toppings[]" value="pepper">Pepper <br>
+                <input type="checkbox" name="toppings[]" value="olive">Olive <br>
+            </fieldset>
+        </div>
+
         <input type="Submit" value ="create"> 
     </form>
 @endsection
