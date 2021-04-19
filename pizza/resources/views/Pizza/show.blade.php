@@ -16,6 +16,12 @@
        </ul>
     </div>
 
+    <form action="/pizza/{{ $pizza->id }}" method="POST">
+        @csrf 
+        @method('DELETE')
+        <button>Done</button>
+    </form>
+
     <h1>**************Pizza list end**************</h1>
 
     <a href="/pizza"> <- Go Back to all pizza </a>
