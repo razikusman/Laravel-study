@@ -41,10 +41,13 @@ class PizzaController extends Controller
     // post
     public function store(){
 
-        error_log(request('name'));
-        error_log(request('type'));
-        error_log(request('price'));
+        $pizza = new pizza();
+        
+        $pizza->name = request('name');
+        $pizza->type = request('type');
+        $pizza->price =  request('price');
 
+        $pizza->save();
         return redirect('/');
     }
 
