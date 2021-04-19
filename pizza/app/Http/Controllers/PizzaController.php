@@ -7,6 +7,7 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
+    // show all
     public function index(){
 
         // get all
@@ -21,17 +22,19 @@ class PizzaController extends Controller
         //find the last add
         $pizzas = pizza::latest()->get();
 
-
-
-
-
-        return view('pizza' , [
+        return view('Pizza.index' , [
             'pizzas'=> $pizzas,
             ]);
     }
 
+    // show with id
     public function show($id){
-        return view('details' , ['id' => $id]);
+        return view('Pizza.show' , ['id' => $id]);
+    }
+
+    // create
+    public function create(){
+        return view('Pizza.create');
     }
 
 }
