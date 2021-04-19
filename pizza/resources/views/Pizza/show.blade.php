@@ -5,7 +5,10 @@
 
 <div>
 
-    <h2>Pizza list - {{$id}}</h2>
+    <h2>Pizza list</h2>
+    <div class="container">
+       <p> {{$pizza->name}} - {{$pizza->type}} - {{$pizza->price}} </p>
+    </div>
 
     
 
