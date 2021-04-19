@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizza', [PizzaController::class, 'index']);
+Route::get('/pizza', [PizzaController::class, 'index']) -> middleware('auth');
 Route::get('/pizza/create', [PizzaController::class, 'create']);
-Route::get('/pizza/{id}', [PizzaController::class, 'show']);
+Route::get('/pizza/{id}', [PizzaController::class, 'show']) -> middleware('auth');
 Route::post('/pizza', [PizzaController::class, 'store']);
-Route::delete('/pizza/{id}', [PizzaController::class, 'destroy']);
+Route::delete('/pizza/{id}', [PizzaController::class, 'destroy']) -> middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
