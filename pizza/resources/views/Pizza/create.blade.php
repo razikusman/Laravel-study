@@ -3,9 +3,9 @@
 @section('content')
 <h1>Welcome ! to pizza house</h1>
 
-    <div class="container">
+    <form action="/pizza" method="POST">
 
-        <h2>Add new Pizza</h2>
+        <h2>Add new Pizza to the list</h2>
 
         <div>
             <label for="name">Name</label>
@@ -21,5 +21,7 @@
             <label for="price">Price</label>
             <input type="text">
         </div>
-    </div>
+
+        <input type="Submit" value =  "create"> 
+    </form>
 @endsection

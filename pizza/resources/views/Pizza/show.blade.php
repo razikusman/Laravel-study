@@ -10,7 +10,9 @@
        <p> {{$pizza->name}} - {{$pizza->type}} - {{$pizza->price}} </p>
     </div>
 
-    
+    <h1>**************Pizza list end**************</h1>
+
+    <a href="/pizza"> <- Go Back to all pizza </a>
 
 </div>
 @endsection
