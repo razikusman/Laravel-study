@@ -22,6 +22,8 @@
         <button>Done</button>
     </form>
 
+   <a href="{{route('pizza.update' , $pizza->id )}}"> <button class="btn btn-success">  Update </button> </a> 
+
     <h1>**************Pizza list end**************</h1>
 
     <a href="{{route('pizza.store')}}"> <- Go Back to all pizza </a>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PizzaController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +14,20 @@ use App\Http\Controllers\PizzaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [HomeController::class, 'index']) ->name('home.index') ;
+Route::get('/email', [HomeController::class, 'email']) ->name('home.email') ;
 
 Route::get('/pizza', [PizzaController::class, 'index']) ->name('pizza.index') -> middleware('auth');
 Route::get('/pizza/create', [PizzaController::class, 'create']) ->name('pizza.create');
 Route::get('/pizza/{id}', [PizzaController::class, 'show']) ->name('pizza.show') -> middleware('auth');
 Route::post('/pizza', [PizzaController::class, 'store']) ->name('pizza.store');
 Route::delete('/pizza/{id}', [PizzaController::class, 'destroy']) ->name('pizza.destroy') -> middleware('auth');
+Route::get('/pizzaupdate/{id}', [PizzaController::class, 'update']) ->name('pizza.update') -> middleware('auth');
+Route::post('/pizzaupdate', [PizzaController::class, 'updatedata']) ->name('pizza.updatedata') -> middleware('auth');
 
 Auth::routes([
-    'register' => false
+    
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

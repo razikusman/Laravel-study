@@ -16,6 +16,8 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                <a href="/email" > <button class="btn btn-primary">send</button></a>
             </div>
         </div>
     </div>
