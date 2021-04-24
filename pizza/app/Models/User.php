@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function uploadImage($image)
+    {
+        $imagename = $image->getClientOriginalName();
+        (new Self())->deleteOldImage();
+        request()->image->storeAs('images', $imagename , 'public');
+        auth()->user()->update(['image' =>  $imagename]);
+    }
+
+    protected function deleteOldImage(){
+        if($this->image)
+            {
+                Storage::delete('/public/images/'.$this->image);
+            }
+    }
 }
