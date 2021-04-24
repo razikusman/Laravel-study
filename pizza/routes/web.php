@@ -18,6 +18,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index']) ->name('home.index') ;
 Route::get('/email', [HomeController::class, 'email']) ->name('home.email') ;
 
+Route::post('/send/image', [HomeController::class, 'store']) ->name('home.store') ;
+
 Route::get('/pizza', [PizzaController::class, 'index']) ->name('pizza.index') -> middleware('auth');
 Route::get('/pizza/create', [PizzaController::class, 'create']) ->name('pizza.create');
 Route::get('/pizza/{id}', [PizzaController::class, 'show']) ->name('pizza.show') -> middleware('auth');

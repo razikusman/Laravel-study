@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facade\Mail;
-
+use App\Models\User;
 
 
 use Illuminate\Http\Request;
@@ -31,7 +31,20 @@ class HomeController extends Controller
     }
 
     public function email(){
-        // return view('email');
-        \Mail::to('raziku98@gmail.com')->send(new WelcomeMail());
+        
+        // \Mail::to('raziku98@gmail.com')->send(new WelcomeMail());
+        return view('email');
+    }
+
+    public function store(Request $request){
+        // request()->image->store('images', 'public');
+
+        if($request->hasfile('image')){
+            $imagename = $request->image->getClientOriginalName();
+            request()->image->storeAs('images', $imagename , 'public');
+           auth()->user()->update(['image' =>  $imagename]);
+        }
+
+        return redirect()->back();
     }
 }
