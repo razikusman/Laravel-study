@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facade\Mail;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Storage;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -41,8 +43,14 @@ class HomeController extends Controller
 
         if($request->hasfile('image')){
             $imagename = $request->image->getClientOriginalName();
+
+            if(auth()->user()->image)
+            {
+                
+                Storage::delete('/public/images/'.auth::user()->image);
+            }
             request()->image->storeAs('images', $imagename , 'public');
-           auth()->user()->update(['image' =>  $imagename]);
+            auth()->user()->update(['image' =>  $imagename]);
         }
 
         return redirect()->back();

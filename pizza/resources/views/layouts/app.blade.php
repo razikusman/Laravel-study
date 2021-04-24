@@ -69,7 +69,9 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
 
+                                    @if(Auth::user()->image)
                                     <img src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="User_Image" style="width:35px">
+                                    @endif
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
