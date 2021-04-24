@@ -42,12 +42,10 @@ class HomeController extends Controller
 
         if($request->hasfile('image')){
             User::uploadImage($request->image);
-            $request->session()->flash('msg' , 'User Image Uploaded.');
-            return redirect()->back();
+            return redirect()->back()->with('msg' , 'User Image Uploaded.');
         }
 
-        $request->session()->flash('err' , 'User Image Upload fail.');
-        return redirect()->back();
+        return redirect()->back()->with('err' , 'User Image Upload fail.');
     }
 
     
