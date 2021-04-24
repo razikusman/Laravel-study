@@ -31,7 +31,7 @@ class HomeController extends Controller
     }
 
     public function email(){
-        return view('email');
-        Mail::to('razikusman@gmail.com')->send(new WelcomeMail());
+        // return view('email');
+        \Mail::to('raziku98@gmail.com')->send(new WelcomeMail());
     }
 }
