@@ -10,16 +10,10 @@
 
             </div>
 
-            @if(session()->has('msg'))
-            <div class="alert alert-success">
-                {{session()->get('msg')}}
-            </div>
-
-            @elseif(session()->has('err'))
-            <div class="alert alert-danger">
-                {{session()->get('err')}}
-            </div>
-            @endif
+            <!-- @include('layouts.flash') -->
+            <x-alert>
+                <p>User Image Upload status</p>
+            </x-alert>
 
             <form action="/send/image" method="post" enctype="multipart/form-data">
                 @csrf
