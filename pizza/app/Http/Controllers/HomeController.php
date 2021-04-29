@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\WelcomeMail;
-use Illuminate\Support\Facade\Mail;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Auth;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 
@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function email(){
         
-        // \Mail::to('raziku98@gmail.com')->send(new WelcomeMail());
+        Mail::to('larastudy154@gmail.com')->send(new WelcomeMail());
         return view('email');
     }
 

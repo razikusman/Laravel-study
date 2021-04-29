@@ -14,12 +14,10 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+// login controller
+Route::get('/home', [LoginController::class, 'email']) ->name('login.email') ;
 
-Route::get('/', [HomeController::class, 'index']) ->name('home.index') ;
-Route::get('/email', [HomeController::class, 'email']) ->name('home.email') ;
-
-Route::post('/send/image', [HomeController::class, 'store']) ->name('home.store') ;
-
+// pizza controller
 Route::get('/pizza', [PizzaController::class, 'index']) ->name('pizza.index') -> middleware('auth');
 Route::get('/pizza/create', [PizzaController::class, 'create']) ->name('pizza.create');
 Route::get('/pizza/{id}', [PizzaController::class, 'show']) ->name('pizza.show') -> middleware('auth');
@@ -32,4 +30,9 @@ Auth::routes([
     
 ]);
 
+// homecontroller
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/send/image', [HomeController::class, 'store']) ->name('home.store') ;
+Route::get('/', [HomeController::class, 'index']) ->name('home.index') ;
+Route::get('/email', [HomeController::class, 'email']) ->name('home.email') ;
+
